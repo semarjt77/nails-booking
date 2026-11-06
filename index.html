@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumi Nails – Booking Nail Art</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#14081f; --panel:rgba(255,255,255,.06); --panel2:rgba(255,255,255,.1);
+  --ink:#f8f0ff; --muted:#b8a6cc; --line:rgba(255,255,255,.14);
+  --accent:#ff5fa2; --accent-ink:#2a0618; --glow:rgba(255,95,162,.35);
+  --head:'Syne','Trebuchet MS',sans-serif; --body:'Manrope','Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);overflow-x:hidden;
+  background-image:radial-gradient(600px 400px at 85% -5%,var(--glow),transparent 70%),radial-gradient(500px 400px at -10% 40%,rgba(120,90,255,.22),transparent 70%);
+  background-repeat:no-repeat;transition:background-image .4s}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--head);margin:0;line-height:1.02}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font:800 1.3rem var(--head);letter-spacing:-.01em}
+.logo i{display:inline-block;width:.7em;height:1em;border-radius:50% 50% 30% 30%;background:var(--accent);margin-right:8px;vertical-align:-.12em;box-shadow:0 0 18px var(--accent)}
+nav a{color:var(--ink);text-decoration:none;font-weight:700;border:1px solid var(--line);border-radius:99px;padding:8px 18px}
+nav a:hover{background:var(--panel2)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding:34px 0 30px}
+.hero h1{font-size:clamp(2.8rem,8vw,5.6rem);font-weight:800;letter-spacing:-.035em;animation:rise .8s both}
+.hero p{color:var(--muted);font-size:1.12rem;max-width:44ch;margin:20px 0 28px;animation:rise .8s .12s both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);font:800 1rem var(--body);border:0;border-radius:99px;padding:15px 30px;cursor:pointer;text-decoration:none;box-shadow:0 8px 30px var(--glow);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 38px var(--glow)}
+.stage{position:relative;height:380px;display:flex;justify-content:center;align-items:flex-end;gap:12px}
+.stage::before{content:"";position:absolute;inset:auto 5% 0;height:70%;border-radius:50%;background:var(--glow);filter:blur(70px)}
+.nail{position:relative;width:62px;border:0;padding:0;cursor:pointer;border-radius:32px 32px 16px 16px;
+  box-shadow:inset -10px 0 14px rgba(0,0,0,.25),inset 0 -16px 18px rgba(0,0,0,.18),0 18px 30px rgba(0,0,0,.4);transition:transform .25s}
+.nail::after{content:"";position:absolute;top:8%;left:16%;width:22%;height:62%;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,0))}
+.nail:hover,.nail:focus-visible,.nail[aria-pressed="true"]{transform:translateY(-16px) scale(1.04)}
+.nail:nth-child(1){height:190px;background:linear-gradient(160deg,#ffb3d6,#ff5fa2)}
+.nail:nth-child(2){height:250px;background:linear-gradient(160deg,#cdb8ff,#7c5cff)}
+.nail:nth-child(3){height:300px;background:linear-gradient(135deg,#fff3b0,#ffb35c 45%,#ff7a59)}
+.nail:nth-child(4){height:260px;background:linear-gradient(160deg,#b8fff0,#25c9a5)}
+.nail:nth-child(5){height:200px;background:linear-gradient(135deg,#e8e8ff,#8a94b8 40%,#2c3150 70%,#d9e4ff)}
+.hint{text-align:center;color:var(--muted);font-size:.85rem;margin:14px 0 0}
+
+section{padding:50px 0}
+h2{font-size:clamp(1.9rem,5vw,3rem);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.sub{color:var(--muted);margin:0 0 26px}
+
+.services{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.svc{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px;text-align:left;cursor:pointer;color:var(--ink);font:inherit;backdrop-filter:blur(8px);transition:transform .2s,border-color .2s,background .2s}
+.svc:hover{transform:translateY(-4px);border-color:var(--accent)}
+.svc[aria-pressed="true"]{border-color:var(--accent);background:var(--panel2);box-shadow:0 0 0 1px var(--accent),0 10px 36px var(--glow)}
+.svc h3{font-size:1.25rem;margin-bottom:6px}
+.svc p{margin:0 0 14px;color:var(--muted);font-size:.95rem}
+.chip{display:inline-block;font-size:.8rem;font-weight:700;border:1px solid var(--line);border-radius:99px;padding:3px 12px}
+
+.book{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:26px;backdrop-filter:blur(10px)}
+label{display:block;font-weight:700;margin:18px 0 8px}
+label:first-child{margin-top:0}
+input,textarea{width:100%;font:inherit;color:var(--ink);background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:14px;padding:13px 15px}
+input:focus,textarea:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--glow)}
+::placeholder{color:#8f7ca3}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:8px}
+.slot{font:700 .95rem var(--body);color:var(--ink);background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:14px;padding:11px 0;cursor:pointer}
+.slot:hover:not(:disabled){border-color:var(--accent)}
+.slot[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.slot:disabled{text-decoration:line-through;opacity:.3;cursor:not-allowed}
+.empty{color:var(--muted);margin:0}
+.sum{position:sticky;top:18px}
+.sum h3{font-size:1.4rem;margin-bottom:6px}
+.sum dl{margin:0}
+.sum dt{color:var(--muted);font-size:.85rem;margin-top:14px}
+.sum dd{margin:2px 0 0;font-weight:700}
+.err{color:#ff9aa3;font-weight:500;min-height:1.5em;margin:18px 0 6px}
+.sum .btn{width:100%;text-align:center}
+.note{font-size:.85rem;color:var(--muted);margin:14px 0 0}
+footer{padding:36px 0 56px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);margin-top:20px}
+@media (max-width:780px){
+  .hero,.book{grid-template-columns:1fr}
+  .stage{height:290px;gap:8px}.nail{width:48px}
+  .nail:nth-child(1){height:140px}.nail:nth-child(2){height:190px}.nail:nth-child(3){height:230px}.nail:nth-child(4){height:200px}.nail:nth-child(5){height:150px}
+  .sum{position:static}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="logo"><i></i>Xien Beauty Studio</div><a href="#booking">Booking</a></nav>
+
+  <header class="hero">
+    <div>
+      <h1>Kuku kamu, panggung kamu.</h1>
+      <p>Pilih warna, pilih jadwal, kirim lewat WhatsApp. Tim kami langsung konfirmasi.</p>
+      <a class="btn" href="#booking">Booking sekarang</a>
+    </div>
+    <div>
+      <div class="stage" id="stage">
+        <button class="nail" aria-label="Pink glossy" aria-pressed="false" data-svc="gel" data-c="#ff5fa2" data-ink="#2a0618"></button>
+        <button class="nail" aria-label="Ungu" aria-pressed="false" data-svc="art" data-c="#9a7dff" data-ink="#150a3d"></button>
+        <button class="nail" aria-label="Emas chrome" aria-pressed="false" data-svc="chrome" data-c="#ffa65c" data-ink="#331600"></button>
+        <button class="nail" aria-label="Hijau mint" aria-pressed="false" data-svc="ext" data-c="#2fd6ae" data-ink="#04261d"></button>
+        <button class="nail" aria-label="Silver" aria-pressed="false" data-svc="remove" data-c="#b9c6ff" data-ink="#10163a"></button>
+      </div>
+      <p class="hint">Ketuk satu kuku untuk mengganti warna tema dan layanan</p>
+    </div>
+  </header>
+
+  <section id="layanan">
+    <h2>Pilih layanan</h2>
+    <p class="sub">Biaya dikonfirmasi oleh tim kami lewat WhatsApp sesuai desain yang Anda pilih.</p>
+    <div class="services" id="services"></div>
+  </section>
+
+  <section id="booking">
+    <h2>Jadwalkan kunjungan</h2>
+    <p class="sub">Isi data berikut, lalu kirim lewat WhatsApp.</p>
+    <div class="book">
+      <div class="card">
+        <label for="date">Tanggal</label>
+        <input type="date" id="date">
+        <label id="slotLabel">Jam</label>
+        <div class="slots" id="slots" role="group" aria-labelledby="slotLabel"></div>
+        <label for="name">Nama</label>
+        <input id="name" autocomplete="name" placeholder="Nama lengkap">
+        <label for="phone">Nomor WhatsApp</label>
+        <input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="08123456789">
+        <label for="notes">Catatan desain (opsional)</label>
+        <textarea id="notes" rows="3" placeholder="Contoh: warna pastel, glitter di jari manis"></textarea>
+      </div>
+      <aside class="card sum" aria-live="polite">
+        <h3>Ringkasan</h3>
+        <dl>
+          <dt>Layanan</dt><dd id="sSvc">Belum dipilih</dd>
+          <dt>Jadwal</dt><dd id="sTime">Belum dipilih</dd>
+          <dt>Durasi</dt><dd id="sDur">-</dd>
+        </dl>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn" id="send">Kirim via WhatsApp</button>
+        <p class="note">Booking sah setelah kami konfirmasi lewat WhatsApp.</p>
+      </aside>
+    </div>
+  </section>
+
+  <footer><strong>Xien Beauty Studio</strong> · Buka setiap hari, 10.00–20.00 · Jakarta</footer>
+</div>
+
+<script>
+// ====== UBAH BAGIAN INI ======
+const WA_NUMBER = "6281264759145";      // format 62xxx, tanpa + atau 0
+const OPEN_HOUR = 10, CLOSE_HOUR = 20;
+const SERVICES = [
+  {id:"gel",    name:"Gel Polish",       desc:"Warna polos, glossy, tahan lama",    min:60},
+  {id:"art",    name:"Nail Art Custom",  desc:"Gambar, ombre, atau glitter",         min:90},
+  {id:"chrome", name:"Chrome / Cat-eye", desc:"Efek berkilau seperti cermin",        min:90},
+  {id:"ext",    name:"Extension + Art",  desc:"Pemanjangan kuku dengan desain",      min:150},
+  {id:"remove", name:"Lepas Gel",        desc:"Aman, tanpa merusak kuku",            min:30}
+];
+// ==============================
+const $ = id => document.getElementById(id), pad = n => String(n).padStart(2,"0");
+let svc = null, slot = null;
+
+$("services").innerHTML = SERVICES.map(s =>
+  `<button class="svc" data-id="${s.id}" aria-pressed="false"><h3>${s.name}</h3><p>${s.desc}</p><span class="chip">${s.min} menit</span></button>`).join("");
+
+function pickService(id){
+  svc = SERVICES.find(s => s.id === id) || null;
+  document.querySelectorAll(".svc").forEach(b => b.setAttribute("aria-pressed", b.dataset.id === id));
+  renderSlots(); render();
+}
+$("services").addEventListener("click", e => { const b = e.target.closest(".svc"); if (b) pickService(b.dataset.id); });
+
+document.querySelectorAll(".nail").forEach(n => n.addEventListener("click", () => {
+  const r = document.documentElement.style, c = n.dataset.c;
+  r.setProperty("--accent", c); r.setProperty("--accent-ink", n.dataset.ink);
+  const h = c.slice(1), rgb = [0,2,4].map(i => parseInt(h.substr(i,2),16)).join(",");
+  r.setProperty("--glow", `rgba(${rgb},.35)`);
+  document.querySelectorAll(".nail").forEach(x => x.setAttribute("aria-pressed", x === n));
+  pickService(n.dataset.svc);
+}));
+
+const now0 = new Date();
+$("date").min = `${now0.getFullYear()}-${pad(now0.getMonth()+1)}-${pad(now0.getDate())}`;
+$("date").addEventListener("change", () => { slot = null; renderSlots(); render(); });
+
+function renderSlots(){
+  const d = $("date").value;
+  if (!d){ $("slots").innerHTML = '<p class="empty">Pilih tanggal dulu untuk melihat jam yang tersedia.</p>'; return; }
+  const dur = svc ? svc.min : 60, now = new Date();
+  let html = "";
+  for (let m = OPEN_HOUR*60; m + dur <= CLOSE_HOUR*60; m += 30){
+    const t = `${pad(Math.floor(m/60))}.${pad(m%60)}`;
+    const past = new Date(`${d}T${pad(Math.floor(m/60))}:${pad(m%60)}:00`) <= now;
+    html += `<button class="slot" data-t="${t}" aria-pressed="${slot===t}" ${past?"disabled":""}>${t}</button>`;
+  }
+  $("slots").innerHTML = html || '<p class="empty">Tidak ada jam tersedia untuk layanan ini.</p>';
+}
+$("slots").addEventListener("click", e => {
+  const b = e.target.closest(".slot"); if (!b || b.disabled) return;
+  slot = b.dataset.t; renderSlots(); render();
+});
+
+const fmtDate = s => new Date(s+"T00:00:00").toLocaleDateString("id-ID",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+function render(){
+  $("sSvc").textContent = svc ? svc.name : "Belum dipilih";
+  $("sDur").textContent = svc ? svc.min + " menit" : "-";
+  const d = $("date").value;
+  $("sTime").textContent = d && slot ? `${fmtDate(d)}, ${slot}` : "Belum dipilih";
+}
+
+$("send").addEventListener("click", () => {
+  const name = $("name").value.trim(), phone = $("phone").value.trim(), d = $("date").value, err = $("err");
+  if (!svc) return err.textContent = "Pilih layanan terlebih dahulu.";
+  if (!d || !slot) return err.textContent = "Pilih tanggal dan jam.";
+  if (name.length < 2) return err.textContent = "Isi nama Anda.";
+  if (!/^(\+?62|0)8\d{7,12}$/.test(phone.replace(/[\s-]/g,""))) return err.textContent = "Nomor WhatsApp tidak valid. Contoh: 08123456789.";
+  err.textContent = "";
+  const notes = $("notes").value.trim();
+  const text = ["Halo Xien Beauty Studio, saya ingin booking:","",`Nama: ${name}`,`WhatsApp: ${phone}`,
+    `Layanan: ${svc.name} (${svc.min} menit)`,`Jadwal: ${fmtDate(d)}, pukul ${slot}`,
+    notes ? `Catatan: ${notes}` : null,"","Mohon konfirmasinya. Terima kasih!"].filter(x => x !== null).join("\n");
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`,"_blank","noopener");
+});
+renderSlots(); render();
+</script>
+</body>
+</html>
